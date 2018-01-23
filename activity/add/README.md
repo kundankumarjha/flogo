@@ -5,7 +5,7 @@ This activity provides your flogo application with rudementary adding facility.
 ## Installation
 
 ```bash
-flogo add activity github.com/kundankumarjha/flogo/activity/log
+flogo add activity github.com/kundankumarjha/flogo/activity/add
 ```
 
 ## Schema
@@ -14,65 +14,44 @@ Inputs and Outputs:
 ```json
 {
   "inputs":[
-    {
-      "name": "message",
-      "type": "string",
-      "value": ""
-    },
-    {
-      "name": "flowInfo",
-      "type": "boolean",
-      "value": "false"
-    },
-    {
-      "name": "addToFlow",
-      "type": "boolean",
-      "value": "false"
-    }
+      {
+        "name": "number1",
+        "type": "integer"
+      },
+      {
+        "name": "number2",
+        "type": "integer"
+      }
   ],
   "outputs": [
-    {
-      "name": "message",
-      "type": "string"
-    }
+      {
+        "name": "sum",
+        "type": "integer"
+      }
   ]
 }
 ```
 ## Settings
 | Setting   | Description    |
 |:----------|:---------------|
-| message   | The message to log |         
-| flowInfo  | Append the flow information to the log message |
-| addToFlow | Add the log message to the 'message' output of the activity |
+| number1   | First input number |
+| number2   | Second input number |
+| sum       | Add inputs to the 'sum' output of the activity |
 
 
 ## Configuration Examples
 ### Simple
-Configure a task to log a message 'test message':
+Configure a task to add 2 numbers:
 
 ```json
 {
   "id": 3,
   "type": 1,
-  "activityType": "tibco-log",
-  "name": "Log Message",
+  "activityType": "kundankumarjha-add",
+  "name": "Add Numbers",
   "attributes": [
-    { "name": "message", "value": "test message" }
-  ]
-}
-```
-### Advanced
-Configure a task to log a 'petId' attribute as a message:
-
-```json
-{
-  "id": 3,
-  "type": 1,
-  "activityType": "tibco-log",
-  "name": "Log PetId",
-  "attributes": [],
-  "inputMappings": [
-    { "type": 1, "value": "petId", "mapTo": "message" }
+    { "name": "number1", "value": 10 },
+    { "name": "number2", "value": 20 }
   ]
 }
 ```
