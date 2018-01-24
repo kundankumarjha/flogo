@@ -4,6 +4,7 @@
   "type": "flogo:activity",
   "description": "activity description",
   "author": "Your Name kjha@tibco.com",
+  "ref": "github.com/kundankumarjha/flogo/activity/zendesk",
   "inputs":[
     {
       "name": "firstName",
