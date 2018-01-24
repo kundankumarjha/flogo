@@ -1,0 +1,23 @@
+{
+  "name": "zendesk",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "activity description",
+  "author": "Your Name kjha@tibco.com",
+  "inputs":[
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}
